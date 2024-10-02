@@ -13,7 +13,7 @@ jobs: # une série d'étapes se déclenchera
     steps:
       # Checkout du dépôt
       - name: Checkout code
-        uses: actions/checkout@v2 # récupération du code du dépôt
+        uses: actions/checkout@v3 # récupération du code du dépôt
 
       # Déploiement sur GitHub Pages
       - name: Deploy to GitHub Pages
