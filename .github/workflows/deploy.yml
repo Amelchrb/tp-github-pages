@@ -1,23 +1,23 @@
 name: Déploiement sur GitHub Pages
 
- # Déclenche le workflow lors d'un push sur la branche main
-     on:
-       push:
-         branches:
-           - main
+# Déclenche le workflow lors d'un push sur la branche main
+on:
+  push:
+    branches:
+      - main
 
-     jobs: #une serie d'étape se déclenchera
-       deploy:
-         runs-on: ubuntu-latest
+jobs: # une série d'étapes se déclenchera
+  deploy:
+    runs-on: ubuntu-latest
 
-         steps:
-           # Checkout du dépôt
-           - name: Checkout code
-             uses: actions/checkout@v2b #récupération du code de dépôt
+    steps:
+      # Checkout du dépôt
+      - name: Checkout code
+        uses: actions/checkout@v2 # récupération du code du dépôt
 
-           # Déploiement sur GitHub Pages
-           - name: Deploy to GitHub Pages
-             uses: peaceiris/actions-gh-pages@v3 #publie le site sur le lien de GitHubpage généré
-             with:
-               github_token: ${{ secrets.GITHUB_TOKEN }}
-               publish_dir: ./ # Répertoire à publier, ici le réperetoire racine. 
+      # Déploiement sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # publie le site sur le lien de GitHub Pages généré
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ # Répertoire à publier, ici le répertoire racine.
